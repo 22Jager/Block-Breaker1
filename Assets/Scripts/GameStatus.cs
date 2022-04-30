@@ -9,7 +9,7 @@ public class GameStatus : MonoBehaviour
     [Range(0.1f, 10f)] [SerializeField] float gameSpeed = 1f;
     [SerializeField] int pointsPerBlockDestroyed = 85;
     [SerializeField] TextMeshProUGUI scoreText;
-
+    
     //state variables
     [SerializeField] int currentScore = 0;
 

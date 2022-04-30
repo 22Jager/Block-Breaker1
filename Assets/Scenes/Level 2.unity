@@ -5570,11 +5570,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5482888399229089645, guid: 1a0a53e18ffc1f541b655b3abda4cf47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.74
+      value: 8.768
       objectReference: {fileID: 0}
     - target: {fileID: 5482888399229089645, guid: 1a0a53e18ffc1f541b655b3abda4cf47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.52
+      value: 0.656
       objectReference: {fileID: 0}
     - target: {fileID: 5482888399229089645, guid: 1a0a53e18ffc1f541b655b3abda4cf47, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5822,6 +5822,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7815091430334769512, guid: 1cbd885a5af7dad4b85307e41cb577d0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7815091430429807752, guid: 1cbd885a5af7dad4b85307e41cb577d0, type: 3}
       propertyPath: m_Name
       value: Play Space
@@ -7748,11 +7752,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4173816115361698300, guid: c06639dd42bf191449e4a5fcdb7189a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.77
+      value: 8.751
       objectReference: {fileID: 0}
     - target: {fileID: 4173816115361698300, guid: c06639dd42bf191449e4a5fcdb7189a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.17
+      value: 0.253
       objectReference: {fileID: 0}
     - target: {fileID: 4173816115361698300, guid: c06639dd42bf191449e4a5fcdb7189a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7789,6 +7793,14 @@ PrefabInstance:
     - target: {fileID: 4173816115361698302, guid: c06639dd42bf191449e4a5fcdb7189a6, type: 3}
       propertyPath: m_Name
       value: Paddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173816115361698302, guid: c06639dd42bf191449e4a5fcdb7189a6, type: 3}
+      propertyPath: m_TagString
+      value: Paddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173816115361698303, guid: c06639dd42bf191449e4a5fcdb7189a6, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c06639dd42bf191449e4a5fcdb7189a6, type: 3}
@@ -9163,6 +9175,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 732471935141188383, guid: 83a544d76aa365440a9412b36d0cc7c7, type: 3}
+      propertyPath: gameSpeed
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1770432882102023175, guid: 83a544d76aa365440a9412b36d0cc7c7, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -9206,6 +9222,10 @@ PrefabInstance:
     - target: {fileID: 1770432882102023175, guid: 83a544d76aa365440a9412b36d0cc7c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196428136001218352, guid: 83a544d76aa365440a9412b36d0cc7c7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -31.886475
       objectReference: {fileID: 0}
     - target: {fileID: 6792862744171110261, guid: 83a544d76aa365440a9412b36d0cc7c7, type: 3}
       propertyPath: m_Name

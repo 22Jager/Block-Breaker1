@@ -22,7 +22,7 @@ public class LevelLogic : MonoBehaviour
             sceneLoader.LoadNextScene();
         }
     }
-
+    
     private void Start() 
     {
         sceneLoader = FindObjectOfType<SceneLoader>();

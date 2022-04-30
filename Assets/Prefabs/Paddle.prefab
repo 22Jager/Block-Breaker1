@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4173816115361698300}
   - component: {fileID: 4173816115361698303}
-  - component: {fileID: 4173816115361698301}
   - component: {fileID: 4173816115361698298}
+  - component: {fileID: -2075535061310904234}
   m_Layer: 0
   m_Name: Paddle
-  m_TagString: Untagged
+  m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,8 +84,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &4173816115361698301
-PolygonCollider2D:
+--- !u!114 &4173816115361698298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4173816115361698302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54cc1bd6ff67db94c9b070bc6523c8ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minValue: 1
+  maxValue: 15
+--- !u!61 &-2075535061310904234
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -107,28 +121,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.5101223, y: 0.25}
-      - {x: -0.5101228, y: 0.25}
-      - {x: -0.8156605, y: 0.12068692}
-      - {x: -1, y: 0.04243675}
-      - {x: -1, y: -0.25}
-      - {x: 1, y: -0.25}
-      - {x: 1, y: 0.04222396}
-      - {x: 0.83192444, y: 0.11253643}
---- !u!114 &4173816115361698298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4173816115361698302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54cc1bd6ff67db94c9b070bc6523c8ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenWidthInUnit: 16
-  minValue: 1
-  maxValue: 15
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.5}
+  m_EdgeRadius: 0

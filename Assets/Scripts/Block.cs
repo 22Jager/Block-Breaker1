@@ -19,7 +19,7 @@ public class Block : MonoBehaviour
     {
         CountBreakableBlocks();
     }
-    private void OnCollisionEnter2D(Collision2D collision) // метод спрацьовує коли якась колізія натикається на цю конкретну колізію
+    private void OnCollisionEnter2D(Collision2D collision) 
     {
         if (tag == "Breakable") 
         {
@@ -49,7 +49,7 @@ public class Block : MonoBehaviour
 
     private void DestroyBlock() 
     {
-        AudioSource.PlayClipAtPoint(breakSound, new Vector3(transform.position.x, transform.position.y, transform.position.z)); // new Vector3() можна замінити Camera.main.transform.position
+        AudioSource.PlayClipAtPoint(breakSound, new Vector3(transform.position.x, transform.position.y, transform.position.z));
         FindObjectOfType<GameStatus>().AddToScore();
         TriggerSparkles();
         level.BlockWasBroken();
