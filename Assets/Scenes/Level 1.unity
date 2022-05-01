@@ -4616,6 +4616,10 @@ PrefabInstance:
       value: Ball
       objectReference: {fileID: 0}
     - target: {fileID: 5482888399229089650, guid: 1a0a53e18ffc1f541b655b3abda4cf47, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482888399229089650, guid: 1a0a53e18ffc1f541b655b3abda4cf47, type: 3}
       propertyPath: paddle1
       value: 
       objectReference: {fileID: 1144065076}
@@ -9814,6 +9818,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 732471935141188383, guid: 83a544d76aa365440a9412b36d0cc7c7, type: 3}
+      propertyPath: gameSpeed
+      value: 0.16
+      objectReference: {fileID: 0}
     - target: {fileID: 1770432882102023175, guid: 83a544d76aa365440a9412b36d0cc7c7, type: 3}
       propertyPath: m_RootOrder
       value: 12

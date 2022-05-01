@@ -6,33 +6,29 @@ public class BallMove : MonoBehaviour
 {
     // Config param
     [SerializeField] PaddleMove paddle1;
-    [SerializeField] float xPush = 5;
-    [SerializeField] float yPush = 15; 
     [SerializeField] AudioClip[] ballSounds;
+    [SerializeField] float speed = 1f;
 
-    //State
+        //State
     const int expandedAngle = 180;
-    float sumSpeed, paddleSize, ballXPos, paddleXPos, posGap,
-    littlestPartOfPaddle;
+    private float paddleSize;
+    float ballXPos, paddleXPos, posGap;
     Vector2 paddleToBallVector;
     bool hasStarted = false;
     float[] newXPushes;
 
     // Cached component references
     AudioSource myAudioSource;
+    private Rigidbody2D _rigidbody2D;
 
     // Start is called before the first frame update
     void Start()
     {
         paddleToBallVector = transform.position - paddle1.transform.position;
         myAudioSource = GetComponent<AudioSource>();
-        sumSpeed = xPush + yPush + 1;    // we add 1 to not remember 0 pos
-        littlestPartOfPaddle = paddleSize / sumSpeed;
-        newXPushes = new float[(int)sumSpeed];
-        for (int i = 0; i < sumSpeed; i++) 
-        {
-            newXPushes[i] = (sumSpeed / 2 * -1) + i;
-        }
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+        
+        
     }
 
     // Update is called once per frame
@@ -60,8 +56,7 @@ public class BallMove : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             hasStarted = true;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(xPush, yPush);
-
+            _rigidbody2D.velocity = new Vector2(0, speed);
         }
     }
 
@@ -89,20 +84,8 @@ public class BallMove : MonoBehaviour
         ballXPos = transform.position.x;
         paddleXPos = playerPaddle.transform.position.x - (paddleSize / 2);
         posGap = paddleXPos - ballXPos;
-        float startingAngle = ((posGap / paddleSize) * expandedAngle);
+        float startingAngle = (-1 * expandedAngle) - ((posGap / paddleSize) * expandedAngle);
         Debug.Log(startingAngle);
-        GetComponent<Rigidbody2D>().velocity = new Vector2((float)Mathf.Cos(startingAngle),
-            (float)Mathf.Sin(startingAngle)) * sumSpeed;
-        //find pos of ball and paddle
-        /*ballXPos = transform.position.x;
-        paddleXPos = playerPaddle.transform.position.x - (paddleSize/2);
-        posGap = ballXPos - paddleXPos;
-        // changing the vector of the ball
-        for (int i = 0; i < sumSpeed - 1; i++) 
-        {
-            if (posGap >= 0 + (i * littlestPartOfPaddle) && posGap < littlestPartOfPaddle * (i + 1)) 
-            {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(newXPushes[i], yPush);
-            }*/
+        _rigidbody2D.velocity = new Vector2(Mathf.Sin(startingAngle), Mathf.Cos(startingAngle)) * speed;
     }
 }
