@@ -11,11 +11,11 @@ public class BallMove : MonoBehaviour
     [SerializeField] AudioClip[] ballSounds;
 
     //State
+    const int expandedAngle = 180;
     float sumSpeed, paddleSize, ballXPos, paddleXPos, posGap,
     littlestPartOfPaddle;
     Vector2 paddleToBallVector;
     bool hasStarted = false;
-    GameObject playerPaddle;
     float[] newXPushes;
 
     // Cached component references
@@ -26,8 +26,6 @@ public class BallMove : MonoBehaviour
     {
         paddleToBallVector = transform.position - paddle1.transform.position;
         myAudioSource = GetComponent<AudioSource>();
-        playerPaddle = GameObject.Find("Paddle");
-        paddleSize = playerPaddle.GetComponent<BoxCollider2D>().size.x;
         sumSpeed = xPush + yPush + 1;    // we add 1 to not remember 0 pos
         littlestPartOfPaddle = paddleSize / sumSpeed;
         newXPushes = new float[(int)sumSpeed];
@@ -77,7 +75,7 @@ public class BallMove : MonoBehaviour
         {
             if (collision.gameObject.tag == "Paddle")
             {
-                ChangeMoveAfterPaddle();
+                ChangeMoveAfterPaddle(collision.gameObject);
             }
 
             myAudioSource.PlayOneShot(clip);
@@ -85,10 +83,18 @@ public class BallMove : MonoBehaviour
     }
 
     // changing the vector of the ball depending on the position relative to the paddle
-    private void ChangeMoveAfterPaddle()
+    private void ChangeMoveAfterPaddle(GameObject playerPaddle)
     {
-        //find pos of ball and paddle
+        paddleSize = playerPaddle.GetComponent<BoxCollider2D>().size.x;
         ballXPos = transform.position.x;
+        paddleXPos = playerPaddle.transform.position.x - (paddleSize / 2);
+        posGap = paddleXPos - ballXPos;
+        float startingAngle = ((posGap / paddleSize) * expandedAngle);
+        Debug.Log(startingAngle);
+        GetComponent<Rigidbody2D>().velocity = new Vector2((float)Mathf.Cos(startingAngle),
+            (float)Mathf.Sin(startingAngle)) * sumSpeed;
+        //find pos of ball and paddle
+        /*ballXPos = transform.position.x;
         paddleXPos = playerPaddle.transform.position.x - (paddleSize/2);
         posGap = ballXPos - paddleXPos;
         // changing the vector of the ball
@@ -97,7 +103,6 @@ public class BallMove : MonoBehaviour
             if (posGap >= 0 + (i * littlestPartOfPaddle) && posGap < littlestPartOfPaddle * (i + 1)) 
             {
                 GetComponent<Rigidbody2D>().velocity = new Vector2(newXPushes[i], yPush);
-            }
-        }
+            }*/
     }
 }
